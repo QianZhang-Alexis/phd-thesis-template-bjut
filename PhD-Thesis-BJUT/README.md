@@ -1,5 +1,13 @@
-ucasthesis stable release
+Based on ucasthesis stable release
 ==========
+
+本模板用于撰写北京工业大学学位论文
+
+以下为原UCAS模板readme文件内容
+
+==========
+
+ucasthesis stable release
 
 (模板下载请点击当前页面右边的：Download ZIP)
 
