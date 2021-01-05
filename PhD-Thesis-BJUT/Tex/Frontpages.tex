@@ -1,0 +1,76 @@
+%!TEX root = ../thesis.tex
+%%
+%%% >>> Title Page
+%%
+%%
+%%% Chinese Title Page and Cover
+%%
+  \classifynumber{1234}%中文图书分类号
+  \udc{1234}%UDC
+  \confidential{}% show confidential tag
+  \schoollogo{scale=0.2}{BJUT}% university logo
+  \title[]{学位论文中文标题}% \title[short title for headers]{Long title of thesis}
+  \author{张三}% name of author
+ % \author{}% name of author
+  \advisor{XXX 教授}% names and titles of supervisors
+  %\advisor{}% names and titles of supervisors
+  \advisorinstitute{北京工业大学}% institute names of supervisors
+  \degree{博士}% degree
+  \degreetype{理学}% degree type
+  \major{数学}% major
+  \institute{理学部}% institute of author
+  \universityid{10005}%学校代码
+  \studentid{BXXXXXXXXX}%学号
+  \submitdate{2020年X月}%论文提交日期
+  \researcharea{XXXX}%研究方向
+  \defenddate{2020年X月}%答辩日期
+  \universityname{北京工业大学}%学位授予单位
+
+  %\chinesedate{2014~年~06~月}% only need for user customized date
+%%
+%%% English Title Page
+%%
+
+  \englishtitle{English Title of PhD Thesis}
+  \englishauthor{Jane Doe}
+%  \englishauthor{}
+  \englishadvisor{\,\,}
+ % \englishadvisor{}
+  \englishdegree{Doctor}
+  \englishmajor{Mathematics}
+  \englishinstitute{Beijing University of Technology}
+  %\englishdate{June, 2014}% only need for user customized date
+%%
+\makecover
+%%% Generate Chinese Title
+%%
+\maketitle
+%%
+%%% Generate English Title
+%%
+%\makeenglishtitle
+%%
+%%% >>> Author's declaration
+%%
+\makedeclaration
+%%
+%%% >>> Abstract
+%%
+\setcounter{page}{0}
+%\chapter{摘\quad 要}% does not show the title on the top
+\chapter*{摘\quad 要}\chaptermark{摘\quad 要}% 摘要标题
+%\begin{abstract}% will show the title on the top
+本文主要研究.....
+
+
+\keywords{数学}
+%\end{abstract}
+
+
+%\chapter{Abstract}% does not show the title on the top
+\chapter*{Abstract}\chaptermark{Abstract}% 摘要标题
+%\begin{englishabstract}% will show the title on the top
+This article focus on.....
+
+\englishkeywords{Math}
+%\end{englishabstract}

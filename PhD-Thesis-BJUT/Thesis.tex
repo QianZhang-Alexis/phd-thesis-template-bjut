@@ -1,0 +1,151 @@
+%%%%% --------------------------------------------------------------------------------
+%%
+%%                               Document Template
+%%
+%%%%% --------------------------------------------------------------------------------
+%% Copyright (C) Huangrui Mo <huangrui.mo@gmail.com>
+%% This is free software: you can redistribute it and/or modify it
+%% under the terms of the GNU General Public License as published by
+%% the Free Software Foundation, either version 3 of the License, or
+%% (at your option) any later version.
+%%%%% --------------------------------------------------------------------------------
+%%
+%%%%************************ Document Class Declaration ******************************
+%%
+\documentclass[doublesided]{Style/bjutthesis}% thesis template of BJUT
+%% Multiple optional arguments:
+%% [scheme = plain] % for thesis writing of international students
+%% [<singlesided|doublesided|printcopy>] % single-sided, double-sided, or print layout
+%% [draftversion] % show draft version information, default is no show
+%% [fontset = <adobe|...>] % specify font set, default is automatic detection
+%% [standard options for ctex class]
+%%%%% --------------------------------------------------------------------------------
+%%
+%%%%************************* Command Define and Settings ****************************
+%%
+\usepackage[myhdr]{Style/commons}% common settings
+%% usage: \usepackage[option1,option2,...,optionN]{commons}
+%% Multiple optional arguments:
+%% [<numbered|authoryear|alpha>] % citation and reference style
+%% <numbered>: textual: Jones [1]; parenthetical: [1]. default style
+%% <authoryear>: textual: Jones (1995); parenthetical: (Jones, 1995)
+%% <alpha>: textual: not available; parenthetical: [Jon95]
+%% [myhdr] % one available header and footer style, will enable fancyhdr
+%% [lscape] % provide landscape layout environment
+%% [geometry] % configure page layout by geometry package
+%% [list] % enable enhanced list environments, useful for Algorithm and Coding
+%% [color] % enable color package to use color, default package is xcolor
+%% [background] % enable page background, will auto enable color package
+%% [tikz] % enable tikz for complex diagrams, will auto enbale color package
+%% [table] % enable a table package for complex tables, default is ctable
+%% [math] % enable some extra math packages
+\usepackage{Style/custom}% user defined commands
+%%%%% --------------------------------------------------------------------------------
+%%
+%%%%******************************** Content *****************************************
+%%
+\usepackage{latexsym,amsfonts,amsbsy,amssymb}
+\usepackage{amsmath,amsthm}
+\usepackage{amsmath,bm}
+\usepackage{amscd}
+
+\newcommand{\ein}{\end{align*}}
+\newcommand{\ei}{\end{align}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\tl}{\tilde}
+\newcommand{\pa}{\partial}
+\newcommand{\vp}{\varphi}
+\newcommand{\nt}{\negthickspace}
+\newcommand{\sumli}{\sum\limits}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\dd}{\,{\rm d}}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\curl}{{\rm curl\,}}
+\renewcommand{\div}{\operatorname{div}}
+\newcommand{\grad}{{\rm grad\,}}
+\DeclareMathOperator*{\tr}{tr}
+\DeclareMathOperator*{\rot}{rot}
+\DeclareMathOperator*{\var}{Var}
+
+
+
+\newtheorem{algorithm}{算法}[section]
+\newtheorem{method}{方法}[section]
+\newtheorem{example}{例}[section]
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{remark}{注}[section]
+
+%----------------------- Publications -------------------------------
+\newenvironment{publications}[1]
+  {\renewcommand\bibname{已完成文章目录}\begin{thebibliography}{#1}}
+  {\end{thebibliography}}
+
+\begin{document}
+%%
+%%%%% ------------------------------------------------------------------------------
+%%
+%%%%******************************** Frontmatter *************************************
+%%
+%% Frontmatter of Title page, Table of contents, Preface chapter.
+\frontmatter
+%%
+%% >>> Frontpages
+%%
+\input{Tex/Frontpages}
+%%
+%%% >>> List of Content
+%%
+%\intotoc{\contentsname}% add a corresponding item to the contents table and bookmark
+%\setcounter{tocdepth}{2}
+\tableofcontents% contents catalog
+
+%\intotoc{\listfigurename}% add a corresponding item to the contents table and bookmark
+\listoffigures% figures catalog
+%\intotoc{\listtablename}% add a corresponding item to the contents table and bookmark
+%\listoftables% tables catalog
+%% >>> prematter
+%%
+%\input{Tex/Prematter}% list of symbols, preface of books
+%%
+%%%%% ------------------------------------------------------------------------------
+%%
+%%%%******************************** Mainmatter **************************************
+%%
+%% Main topics.
+\mainmatter
+%%
+%%% >>> Main Contents
+%%
+\input{Tex/main_content}%
+%%%%% -------------------------------------------------------------------------------
+%%
+%%%%******************************** Appendix ****************************************
+%%
+
+
+\cleardoublepage%
+\appendix% initialize the environment
+%\input{Tex/Appendix}% appendix content
+%-
+%-> Backmatter: bibliography, glossary, index
+%-
+
+\backmatter
+%%
+%%% >>> Bibliography
+%%
+\intotoc{\bibname}% add a corresponding item to the contents table and bookmark
+\bibliography{Biblio/ref}%
+%%
+%%% >>> Other contents
+%%
+\input{Tex/Backmatter}
+%%
+%\input{Tex/Myself}
+\end{document}
+%%%%% -------------------------------------------------------------------------------
